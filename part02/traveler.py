@@ -5,6 +5,7 @@ def solution(a, move):
             if first[1] != 1:
                 first[1] -= 1
         elif m == "R":
+            
             if first[1] != a:
                 first[1] += 1
         elif m == "U":
