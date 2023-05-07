@@ -6,6 +6,9 @@ def solution(cacheSize, cities):
         if ' ' in city:
             cities[idx] = city.replace(' ','')
     cache = []
+    for a in range(cacheSize):
+        cache.append('0')
+    answer = 0
     for city in cities:
         count = 0
         ca_list = []
