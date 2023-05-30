@@ -1,23 +1,19 @@
 def solution(s):
-    answer = 0
-    li = []
-    s = list(s)
-    aa = True
-    while aa:
-        sa = s.pop()
-        if not s:
-            answer = 0
-            break
-        if sa == s[-1]:
-            s.pop()
-            s.extend(li)
-            li = []
+    stack = []
+    if len(s) % 2 != 0:
+        return 0
+    i = 0
+    while i < len(s):
+        if not stack:
+            stack.append(s[i])
+        elif stack[-1] == s[i]:
+            stack.pop()
         else:
-            li.append(sa)
-        if not s and not li:
-            answer = 1
-            aa = False
-    return answer
+            stack.append(s[i])
+        i += 1
+    if stack:
+        return 0
+    else:
+        return 1
 
-# print(solution('baabaa'))
-print(solution('cdcd'))
+# use stack
