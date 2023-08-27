@@ -3,8 +3,8 @@ def element(str1):
     for i, s in enumerate(str1):
     # 교집합 구하기
         if i != len(str1) -1 :
-            if str1[i].isalpha() or str1[i].isdigit():
-                if str1[i + 1].isalpha() or str1[i + 1].isdigit():
+            if str1[i].isalpha():
+                if str1[i + 1].isalpha():
                     arr1.append(str1[i]+str1[i + 1])
     return arr1
 
