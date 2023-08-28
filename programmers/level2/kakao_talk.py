@@ -1,15 +1,22 @@
 def solution(record):
     arr = []
     arr_id = {}
+    answer = []
     for rec in record:
         arr.append(rec.split(' '))
     for a in arr:
         print(a)
-        if arr[0] == "Enter":
+        if a[0] == "Enter":
             arr_id[a[1]] = a[2]
-        elif arr[0] == "Change":
+        elif a[0] == "Change":
             arr_id[a[1]] = a[2]
-    print(arr_id)
+    for a in arr:
+        if a[0] == "Enter":
+            answer.append(f'{arr_id[a[1]]}님이 들어왔습니다.')
+        elif a[0] == "Leave":
+            answer.append(f'{arr_id[a[1]]}님이 나갔습니다.')
+    return answer
 
-solution(["Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"])
+
+print(solution(["Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"]))
 
